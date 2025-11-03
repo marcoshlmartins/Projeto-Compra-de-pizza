@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color:#EEE;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     font-family:'Lato',Helvetica,Arial;
     font-size:15px;
     display:flex;
@@ -18,58 +18,106 @@ header {
     left:0;
     top:0;
     right:0;
-    height:60px;
-    background-color:#399ade;
+    height:70px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     display:none;
     justify-content: flex-end;
     align-items: center;
+    z-index: 999;
 }
 .menu-openner {
-    margin-right: 15px;
-    font-size: 26px;
-    background-color: #a9dcff;
-    padding: 5px 20px;
-    border-radius: 5px;
+    margin-right: 20px;
+    font-size: 24px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: 600;
+}
+.menu-openner:hover {
+    background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .menu-openner span {
     margin-right:10px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
 }
 .menu-closer {
     width:32px;
     height:32px;
     display:none;
     font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.menu-closer:hover {
+    transform: rotate(90deg);
 }
 
 aside {
-    background-color:#9ccbe6;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
-    transition:all ease .2s;
+    transition:all ease .3s;
     overflow-x:hidden;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
 }
 aside.show {
     width:30vw;
 }
 .cart--area {
-    padding:20px;
+    padding:30px;
+}
+.cart--area h1 {
+    color: #333;
+    font-size: 28px;
+    text-align: left;
+    margin-bottom: 25px;
+    text-shadow: none;
 }
 main {
     flex:1;
-    padding:20px;
+    padding:40px 20px;
 }
 h1 {
     font-family:'Hepta Slab', Helvetica, Arial;
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    letter-spacing: 2px;
 }
 .pizza-area {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .pizza-item {
     text-align: center;
-    max-width:250px;
+    max-width:280px;
     font-family:'Hepta Slab', Helvetica, Arial;
-    margin:0 auto 50px auto;
+    margin:0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+.pizza-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 .pizza-item a {
     display:flex;
@@ -80,45 +128,59 @@ h1 {
 .pizza-item--img {
     width:200px;
     height:200px;
-    background-color:#EEE;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     border-radius:100px;
-    box-shadow:0px 10px 50px rgba(0, 0, 0, 0.2);
+    box-shadow:0px 10px 30px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.pizza-item:hover .pizza-item--img {
+    transform: scale(1.05);
+    box-shadow:0px 15px 40px rgba(0, 0, 0, 0.25);
 }
 .pizza-item--img img {
     width:100%;
     height:auto;
 }
 .pizza-item--add {
-    width:50px;
-    height:50px;
-    line-height:50px;
-    border-radius:25px;
-    background-color:#388bc5;
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border-radius:30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     text-align:center;
     color:#FFF;
-    font-size:22px;
+    font-size:28px;
     cursor:pointer;
-    margin-top:-25px;
-    transition:all ease .2s;
+    margin-top:-30px;
+    transition:all ease .3s;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 .pizza-item a:hover .pizza-item--add {
-    background-color:#244c88;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
 }
 .pizza-item--price {
-    font-size:15px;
-    color:#333;
-    margin-top:5px;
+    font-size:18px;
+    color:#667eea;
+    margin-top:15px;
+    font-weight: 700;
 }
 .pizza-item--name {
-    font-size:20px;
+    font-size:24px;
     font-weight: bold;
-    color:#000;
-    margin-top:5px;
+    color:#333;
+    margin-top:10px;
 }
 .pizza-item--desc {
     font-size:13px;
-    color:#555;
+    color:#666;
     margin-top:10px;
+    line-height: 1.5;
 }
 
 .pizzaWindowArea {
@@ -127,26 +189,42 @@ h1 {
     top:0;
     bottom:0;
     right:0;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     display:none;
-    transition: all ease .5s;
+    transition: all ease .3s;
     justify-content: center;
     align-items: center;
     overflow-y:auto;
+    z-index: 1000;
 }
 .pizzaWindowBody {
     width:900px;
     background-color:#FFF;
-    border-radius:10px;
-    box-shadow:0px 0px 15px #999;
+    border-radius:25px;
+    box-shadow:0px 10px 50px rgba(0,0,0,0.3);
     display:flex;
-    margin:20px 0px;
+    margin:20px;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 .pizzaBig {
     flex:1;
     display:flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 30px;
 }
 .pizzaBig--back {
     position:absolute;
@@ -187,20 +265,23 @@ h1 {
 .pizzaInfo--size {
     padding:10px 15px;
     color:#000;
-    background-color:#EEE;
+    background-color:#f5f7fa;
     font-size:13px;
     font-weight: bold;
     cursor:pointer;
+    transition: all 0.3s ease;
 }
 .pizzaInfo--size:hover {
-    background-color:#CCC;
+    background-color:#e1e8ed;
+    transform: translateY(-2px);
 }
 .pizzaInfo--size.selected {
-    background-color:#399ade;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color:#FFF;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 .pizzaInfo--size.selected span {
-    color:#D6D6D6;
+    color:#e8e8e8;
 }
 .pizzaInfo--size span {
     font-size:12px;
@@ -217,42 +298,63 @@ h1 {
 }
 .pizzaInfo--qtarea {
     display:inline-flex;
-    background-color:#EEE;
+    background-color:#f5f7fa;
     border-radius:10px;
-    height:30px;
+    height:40px;
+    align-items: center;
 }
 .pizzaInfo--qtarea button {
     border:0;
     background-color:transparent;
-    font-size:17px;
+    font-size:20px;
     outline:0;
     cursor:pointer;
-    padding:0px 10px;
-    color:#333;
+    padding:0px 15px;
+    color:#667eea;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.pizzaInfo--qtarea button:hover {
+    color:#764ba2;
+    transform: scale(1.2);
 }
 .pizzaInfo--qt {
-    line-height: 30px;
-    font-size: 12px;
+    line-height: 40px;
+    font-size: 16px;
     font-weight: bold;
-    padding: 0px 5px;
-    color:#000;
+    padding: 0px 10px;
+    color:#333;
+    min-width: 40px;
+    text-align: center;
 }
 .pizzaInfo--addButton {
     margin-top:30px;
     padding:20px 30px;
-    border-radius:20px;
-    background-color:#48d05f;
+    border-radius:50px;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
     color:#FFF;
     display:inline-block;
     cursor:pointer;
     margin-right:30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
 }
 .pizzaInfo--addButton:hover {
-    background-color:#32a345;
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(56, 239, 125, 0.6);
 }
 .pizzaInfo--cancelButton {
     display:inline-block;
     cursor:pointer;
+    color:#999;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.pizzaInfo--cancelButton:hover {
+    color:#667eea;
 }
 .pizzaInfo--cancelMobileButton {
     display:none;
@@ -267,42 +369,63 @@ h1 {
 .cart--item {
     display:flex;
     align-items:center;
-    margin:10px 0;
+    margin:15px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.cart--item:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transform: translateX(5px);
 }
 .cart--item img {
-    width:40px;
-    height:40px;
+    width:50px;
+    height:50px;
     margin-right:20px;
+    border-radius: 10px;
 }
 .cart--item-nome {
     flex:1;
+    font-weight: 600;
+    color: #333;
 }
 .cart--item--qtarea {
     display:inline-flex;
-    background-color:#EEE;
+    background-color:#f5f7fa;
     border-radius:10px;
-    height:30px;
+    height:35px;
+    align-items: center;
 }
 .cart--item--qtarea button {
     border:0;
     background-color:transparent;
-    font-size:17px;
+    font-size:18px;
     outline:0;
     cursor:pointer;
-    padding:0px 10px;
-    color:#333;
+    padding:0px 12px;
+    color:#667eea;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.cart--item--qtarea button:hover {
+    color:#764ba2;
+    transform: scale(1.2);
 }
 .cart--item--qt {
-    line-height: 30px;
-    font-size: 12px;
+    line-height: 35px;
+    font-size: 14px;
     font-weight: bold;
-    padding: 0px 5px;
-    color:#000;
+    padding: 0px 10px;
+    color:#333;
+    min-width: 30px;
+    text-align: center;
 }
 .cart--totalitem {
     padding:15px 0;
-    border-top:1px solid #79b9dd;
-    color:#315970;
+    border-top:1px solid #e1e8ed;
+    color:#555;
     display:flex;
     justify-content: space-between;
     font-size:15px;
@@ -311,28 +434,36 @@ h1 {
     font-weight: bold;
 }
 .cart--totalitem.big {
-    font-size:20px;
-    color:#000;
+    font-size:22px;
+    color:#333;
     font-weight: bold;
+    border-top:2px solid #667eea;
+    padding-top: 20px;
 }
 .cart--finalizar {
     padding:20px 30px;
-    border-radius:20px;
-    background-color:#48d05f;
+    border-radius:50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color:#FFF;
     cursor:pointer;
     text-align:center;
     margin-top:20px;
-    border:2px solid #63f77c;
-    transition: all ease .2s;
+    border:none;
+    transition: all ease .3s;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 .cart--finalizar:hover {
-    background-color:#35af4a;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
 }
 
 @media (max-width:1000px) {
     .pizza-area {
         grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
 }
 
@@ -341,16 +472,19 @@ h1 {
         flex-direction: column;
     }
     .pizza-area {
-        display:block;
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
     .pizza-item {
         max-width:100%;
     }
     header {
         display:flex;
+        height:60px;
     }
     main {
-        padding-top:60px;
+        padding-top:80px;
     }
 
     aside {
@@ -360,7 +494,7 @@ h1 {
         right:0;
         top:0;
         bottom:0;
-        transition: all ease .2s;
+        transition: all ease .3s;
     }
     aside.show {
         width:auto;
@@ -387,6 +521,10 @@ h1 {
         margin:0;
     }
 
+    .pizzaBig {
+        padding: 20px;
+    }
+
     .pizzaBig img {
         width: 75%;
         height: auto;
@@ -397,18 +535,18 @@ h1 {
     }
 
     .pizzaInfo--qtarea {
-        height:60px;
+        height:50px;
     }
     .pizzaInfo--qtarea button {
         font-size:25px;
-        padding:0px 25px;
+        padding:0px 20px;
     }
     .pizzaInfo--qt {
-        line-height: 60px;
-        font-size:20px;
+        line-height: 50px;
+        font-size:18px;
     }
     .pizzaInfo--addButton {
-        font-size:20px;
+        font-size:18px;
         display:block;
         text-align:center;
         margin:30px auto;
